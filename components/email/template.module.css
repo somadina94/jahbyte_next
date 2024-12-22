@@ -1,0 +1,14 @@
+.email {
+  background-color: darkslategray;
+  padding: 4rem;
+  margin: auto;
+  max-width: 80rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.email p {
+  font-size: 1.4rem;
+}
