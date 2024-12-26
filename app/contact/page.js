@@ -1,5 +1,5 @@
 "use client";
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 
 import {
   BsFillPersonFill,
@@ -12,7 +12,7 @@ import { sendEmail } from "@/actions/email";
 import Submit from "@/components/email/submit";
 
 export default function Contact() {
-  const [formState, formAction] = useFormState(sendEmail, {});
+  const [formState, formAction] = useActionState(sendEmail, {});
 
   return (
     <div className={classes.container}>

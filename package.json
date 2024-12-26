@@ -10,13 +10,15 @@
   },
   "dependencies": {
     "@react-email/render": "^1.0.3",
+    "@tawk.to/tawk-messenger-react": "^2.0.2",
     "bootstrap": "^5.3.3",
-    "next": "^14.2.21",
+    "next": "^15.1.2",
     "nodemailer": "^6.9.16",
-    "react": "^18.3.1",
+    "react": "^19.0.0",
     "react-bootstrap": "^2.10.7",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.4.0"
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
+    "react-loading-skeleton": "^3.5.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

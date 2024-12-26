@@ -14,6 +14,7 @@ import tailwind from "@/images/certificates/Tailwind.jpg";
 import reactNative from "@/images/certificates/React-Native.jpg";
 import python from "@/images/certificates/Python-UC-a5882f37-0d98-4ab7-8286-34a2968e774d.jpg";
 import uxui from "@/images/certificates/UX-UI-UC-b44670b2-a7db-4851-8ffd-1b0264786438.jpg";
+import nextjs from "@/images/certificates/NEXT-UC-f2863cc8-3887-4355-9f70-2bf5d7d54691.jpg";
 
 export const metadata = {
   title: "Certifications",
@@ -156,6 +157,18 @@ export default function Certifications() {
         </div>
         <a
           href="https://www.udemy.com/certificate/UC-b44670b2-a7db-4851-8ffd-1b0264786438/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View certificate
+        </a>
+      </div>
+      <div className={classes.content}>
+        <div className={classes.photo}>
+          <Image src={nextjs} alt="certificate" />
+        </div>
+        <a
+          href="https://www.udemy.com/certificate/UC-f2863cc8-3887-4355-9f70-2bf5d7d54691/"
           target="_blank"
           rel="noreferrer"
         >

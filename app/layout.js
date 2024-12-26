@@ -1,10 +1,12 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
+
 import Header from "@/components/main/Header";
 import Footer from "@/components/main/Footer";
 import Stack from "@/components/main/Stack";
 import Social from "@/components/main/Social";
+import TawkTo from "@/components/UI/tawkto";
 
 export const metadata = {
   title: "JahByte Technologies",
@@ -20,6 +22,7 @@ export default function RootLayout({ children }) {
         <Stack />
         <Social />
         {children}
+        <TawkTo />
         <Footer />
       </body>
     </html>
