@@ -1,5 +1,6 @@
 "use client";
 import { useFormState } from "react-dom";
+import { useEffect } from "react";
 
 import {
   BsFillPersonFill,
@@ -13,6 +14,13 @@ import Submit from "@/components/email/submit";
 
 export default function Contact() {
   const [formState, formAction] = useFormState(sendEmail, {});
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <div className={classes.container}>
@@ -61,6 +69,10 @@ export default function Contact() {
             <span className={classes.error}>{formState.message}</span>
           )}
         </div>
+        <div
+          className="g-recaptcha"
+          data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+        ></div>
         <Submit />
       </form>
     </div>

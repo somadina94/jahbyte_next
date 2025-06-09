@@ -8,6 +8,7 @@ export async function sendEmail(prevState, formData) {
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message");
+  const token = formData.get("g-recaptcha-response");
 
   let errors = {};
 
@@ -21,6 +22,24 @@ export async function sendEmail(prevState, formData) {
 
   if (!message || message.trim() === "") {
     errors.message = "Please enter your message";
+  }
+
+  if (!token) {
+    errors.message = "CAPTCHA not completed.";
+  }
+
+  const secret = process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY;
+
+  const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `secret=${secret}&response=${token}`,
+  });
+
+  const result = await res.json();
+
+  if (!result.success) {
+    errors.message = "CAPTCHA failed.";
   }
 
   if (Object.keys(errors).length > 0) {
