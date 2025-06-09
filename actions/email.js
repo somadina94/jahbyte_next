@@ -52,20 +52,20 @@ export async function sendEmail(prevState, formData) {
 
   // Configure Nodemailer
   const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
+    host: process.env.NEXT_PUBLIC_EMAIL_HOST,
+    port: process.env.NEXT_PUBLIC_EMAIL_PORT,
     tls: {
       ciphers: "SSLv3",
     },
     auth: {
-      user: process.env.EMAIL_ADDRESS,
-      pass: process.env.EMAIL_PASSWORD,
+      user: process.env.NEXT_PUBLIC_EMAIL_ADDRESS,
+      pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_FROM,
-    to: process.env.EMAIL_FROM,
+    from: process.env.NEXT_PUBLIC_EMAIL_FROM,
+    to: process.env.NEXT_PUBLIC_EMAIL_FROM,
     subject: "Email from Portfolio",
     html: emailHtml,
   };
